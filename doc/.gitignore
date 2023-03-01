@@ -1,0 +1,5 @@
+docgen_tmp/
+docgen
+docgen.o
+langref.html
+langref.ja.html
