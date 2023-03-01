@@ -353,6 +353,64 @@
           <a href="https://ziglang.org/documentation/0.10.1/">0.10.1</a> |
           master
         </nav>
+        <nav aria-labelledby="translate-progress">
+          <h2 id="table-of-contents">翻訳の進捗</h2>
+          <ul>
+            <li><input type="checkbox" readonly checked> {#link|Introduction#}</li>
+            <li><input type="checkbox" readonly checked> {#link|Zig Standard Library#}</li>
+            <li><input type="checkbox" readonly checked> {#link|Hello World#}</li>
+            <li><input type="checkbox" readonly> {#link|Comments#}</li></li>
+            <li><input type="checkbox" readonly checked> {#link|Values#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Zig Test#}</li></li>
+            <li><input type="checkbox" readonly checked> {#link|Variables#}</li></li>
+            <li><input type="checkbox" readonly checked> {#link|Integers#}</li></li>
+            <li><input type="checkbox" readonly checked> {#link|Floats#}</li></li>
+            <li><input type="checkbox" readonly checked> {#link|Operators#}</li></li>
+            <li><input type="checkbox" readonly checked> {#link|Arrays#}</li></li>
+            <li><input type="checkbox" readonly checked> {#link|Vectors#}</li></li>
+            <li><input type="checkbox" readonly checked> {#link|Pointers#}</li></li>
+            <li><input type="checkbox" readonly checked> {#link|Slices#}</li></li>
+            <li><input type="checkbox" readonly> {#link|struct#}</li></li>
+            <li><input type="checkbox" readonly> {#link|enum#}</li></li>
+            <li><input type="checkbox" readonly> {#link|union#}</li></li>
+            <li><input type="checkbox" readonly> {#link|opaque#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Blocks#}</li></li>
+            <li><input type="checkbox" readonly> {#link|switch#}</li></li>
+            <li><input type="checkbox" readonly> {#link|while#}</li></li>
+            <li><input type="checkbox" readonly> {#link|for#}</li></li>
+            <li><input type="checkbox" readonly> {#link|if#}</li></li>
+            <li><input type="checkbox" readonly> {#link|defer#}</li></li>
+            <li><input type="checkbox" readonly> {#link|unreachable#}</li></li>
+            <li><input type="checkbox" readonly> {#link|noreturn#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Functions#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Errors#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Optionals#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Casting#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Zero Bit Types#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Result Location Semantics#}</li></li>
+            <li><input type="checkbox" readonly> {#link|usingnamespace#}</li></li>
+            <li><input type="checkbox" readonly> {#link|comptime#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Assembly#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Atomics#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Async Functions#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Builtin Functions#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Build Mode#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Single Threaded Builds#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Undefined Behavior#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Memory#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Compile Variables#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Root Source File#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Zig Build System#}</li></li>
+            <li><input type="checkbox" readonly> {#link|C#}</li></li>
+            <li><input type="checkbox" readonly> {#link|WebAssembly#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Targets#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Style Guide#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Source Encoding#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Keyword Reference#}</li></li>
+            <li><input type="checkbox" readonly> {#link|Appendix#}</li></li>
+
+          </ul>
+        </nav>
         <nav aria-labelledby="table-of-contents">
           <h2 id="table-of-contents">Table of Contents</h2>
           {#nav#}
@@ -2416,7 +2474,7 @@ test "array initialization with function calls" {
 
       {#header_open|Multidimensional Arrays#}
       <p>
-      Multidimensional arrays can be created by nesting arrays:
+        多次元配列は、配列をネストすることで作成できます:
       </p>
       {#code_begin|test|test_multidimensional_arrays#}
 const std = @import("std");
@@ -2446,8 +2504,7 @@ test "multidimensional arrays" {
 
       {#header_open|Sentinel-Terminated Arrays#}
       <p>
-      The syntax {#syntax#}[N:x]T{#endsyntax#} describes an array which has a sentinel element of value {#syntax#}x{#endsyntax#} at the
-      index corresponding to {#syntax#}len{#endsyntax#}.
+        {#syntax#}[N:x]T{#endsyntax#}という構文は，{#syntax#}len{#endsyntax#}に対応するインデックスに値{#syntax#}x{#endsyntax#}の番兵要素を持つ配列を記述します。
       </p>
       {#code_begin|test|test_null_terminated_array#}
 const std = @import("std");
@@ -2467,14 +2524,13 @@ test "null terminated array" {
 
       {#header_open|Vectors#}
       <p>
-      A vector is a group of booleans, {#link|Integers#}, {#link|Floats#}, or
-      {#link|Pointers#} which are operated on in parallel, using SIMD instructions if possible.
-      Vector types are created with the builtin function {#link|@Vector#}.
+        ベクタは、ブーリアン、{#link|整数|Integers#}、{#link|浮動小数点|Floats#}、{#link|ポインタ|Pointers#}のグループで、可能であればSIMD命令を使って並列に操作されます。
+        ベクタ型は、組み込み関数 {#link|@Vector#} で作成します。
       </p>
       <p>
-      Vectors support the same builtin operators as their underlying base types.
-      These operations are performed element-wise, and return a vector of the same length
-      as the input vectors. This includes:
+        ベクターは、基本型と同じ組み込み演算子をサポートしています。
+        これらの演算は要素ごとに行われ、入力ベクターと同じ長さのベクターを返します。
+        これには以下が含まれます:
       </p>
       <ul>
           <li>Arithmetic ({#syntax#}+{#endsyntax#}, {#syntax#}-{#endsyntax#}, {#syntax#}/{#endsyntax#}, {#syntax#}*{#endsyntax#},
@@ -2485,22 +2541,18 @@ test "null terminated array" {
           <li>Comparison operators ({#syntax#}<{#endsyntax#}, {#syntax#}>{#endsyntax#}, {#syntax#}=={#endsyntax#}, etc.)</li>
       </ul>
       <p>
-      It is prohibited to use a math operator on a mixture of scalars (individual numbers)
-      and vectors. Zig provides the {#link|@splat#} builtin to easily convert from scalars
-      to vectors, and it supports {#link|@reduce#} and array indexing syntax to convert
-      from vectors to scalars. Vectors also support assignment to and from fixed-length
-      arrays with comptime-known length.
+        スカラー(個々の数値)とベクトルが混在している場合に算術演算子を使うことは禁止されています。
+        Zigでは、スカラーからベクトルへの変換を容易にするために{#link|@splat#}組み込み関数が用意されており、ベクトルからスカラーへの変換には{#link|@reduce#}や配列インデックスの構文がサポートされています。
+        ベクトルは、comptime-knownな長さの場合、固定長の配列との間の代入もサポートしています。
       </p>
       <p>
-      For rearranging elements within and between vectors, Zig provides the {#link|@shuffle#} and {#link|@select#} functions.
+        Zigは、{#link|@shuffle#}関数と{#link|@select#}関数を提供し，ベクタ内やベクタ間の要素の並べ替えを行うことができます。
       </p>
       <p>
-      Operations on vectors shorter than the target machine's native SIMD size will typically compile to single SIMD
-      instructions, while vectors longer than the target machine's native SIMD size will compile to multiple SIMD
-      instructions. If a given operation doesn't have SIMD support on the target architecture, the compiler will default
-      to operating on each vector element one at a time. Zig supports any comptime-known vector length up to 2^32-1,
-      although small powers of two (2-64) are most typical. Note that excessively long vector lengths (e.g. 2^20) may
-      result in compiler crashes on current versions of Zig.
+        ターゲットマシンのネイティブ SIMD サイズより短いベクトルに対する演算は、通常シングル SIMD 命令にコンパイルされます。
+        ある演算がターゲット・アーキテクチャで SIMD をサポートしていない場合、コンパイラはデフォルトで各ベクトル要素に対して一度に1つずつ演算を行うようにします。
+        Zig は 2^32-1 までの任意の計算時間既知のベクトル長をサポートしていますが、小さい2の累乗 (2-64) が最も一般的です。
+        現在の Zig では、長すぎるベクトル長 (例えば 2^20) はコンパイラがクラッシュする可能性があります。
       </p>
       {#code_begin|test|test_vector#}
 const std = @import("std");
@@ -2552,44 +2604,46 @@ test "Conversion between vectors, arrays, and slices" {
 
       {#header_open|Pointers#}
       <p>
-      Zig has two kinds of pointers: single-item and many-item.
+        Zigには、単一項目と多項目の2種類のポインタがあります。
       </p>
       <ul>
-          <li>{#syntax#}*T{#endsyntax#} - single-item pointer to exactly one item.
+          <li>{#syntax#}*T{#endsyntax#} - 一つの要素への単一項目ポインタ。
             <ul>
-              <li>Supports deref syntax: {#syntax#}ptr.*{#endsyntax#}</li>
+              <li>参照外し構文をサポート: {#syntax#}ptr.*{#endsyntax#}</li>
             </ul>
           </li>
-          <li>{#syntax#}[*]T{#endsyntax#} - many-item pointer to unknown number of items.
+          <li>{#syntax#}[*]T{#endsyntax#} - 未知数の要素への多項目ポインタ。
             <ul>
-              <li>Supports index syntax: {#syntax#}ptr[i]{#endsyntax#}</li>
-              <li>Supports slice syntax: {#syntax#}ptr[start..end]{#endsyntax#}</li>
-              <li>Supports pointer arithmetic: {#syntax#}ptr + x{#endsyntax#}, {#syntax#}ptr - x{#endsyntax#}</li>
-              <li>{#syntax#}T{#endsyntax#} must have a known size, which means that it cannot be
-              {#syntax#}anyopaque{#endsyntax#} or any other {#link|opaque type|opaque#}.</li>
+              <li>インデックス構文をサポート: {#syntax#}ptr[i]{#endsyntax#}</li>
+              <li>スライス構文をサポート: {#syntax#}ptr[start..end]{#endsyntax#}</li>
+              <li>ポインタ演算をサポート: {#syntax#}ptr + x{#endsyntax#}, {#syntax#}ptr - x{#endsyntax#}</li>
+              <li>{#syntax#}T{#endsyntax#} は既知のサイズでなければならず、
+                {#syntax#}anyopaque{#endsyntax#}や他の{#link|不透明な型|opaque#}にはできません。</li>
             </ul>
           </li>
       </ul>
-      <p>These types are closely related to {#link|Arrays#} and {#link|Slices#}:</p>
+      <p>これらの型は、{#link|配列|Arrays#}や{#link|スライス|Slices#}と密接に関係しています:</p>
         <ul>
-            <li>{#syntax#}*[N]T{#endsyntax#} - pointer to N items, same as single-item pointer to an array.
+            <li>{#syntax#}*[N]T{#endsyntax#} - 配列への単一項目ポインターと同じ、N個の項目へのポインタ。
             <ul>
-                <li>Supports index syntax: {#syntax#}array_ptr[i]{#endsyntax#}</li>
-                <li>Supports slice syntax: {#syntax#}array_ptr[start..end]{#endsyntax#}</li>
-                <li>Supports len property: {#syntax#}array_ptr.len{#endsyntax#}</li>
+                <li>インデックス構文をサポート: {#syntax#}array_ptr[i]{#endsyntax#}</li>
+                <li>スライス構文をサポート: {#syntax#}array_ptr[start..end]{#endsyntax#}</li>
+                <li>lenプロパティをサポート: {#syntax#}array_ptr.len{#endsyntax#}</li>
             </ul>
             </li>
         </ul>
         <ul>
-            <li>{#syntax#}[]T{#endsyntax#} - is a slice (a fat pointer, which contains a pointer of type {#syntax#}[*]T{#endsyntax#} and a length).
+            <li>{#syntax#}[]T{#endsyntax#} - スライス (型{#syntax#}[*]T{#endsyntax#}と長さを含むファットポインタ).
             <ul>
-                <li>Supports index syntax: {#syntax#}slice[i]{#endsyntax#}</li>
-                <li>Supports slice syntax: {#syntax#}slice[start..end]{#endsyntax#}</li>
-                <li>Supports len property: {#syntax#}slice.len{#endsyntax#}</li>
+                <li>インデックス構文をサポート: {#syntax#}slice[i]{#endsyntax#}</li>
+                <li>スライス構文をサポート: {#syntax#}slice[start..end]{#endsyntax#}</li>
+                <li>lenプロパティをサポート: {#syntax#}slice.len{#endsyntax#}</li>
             </ul>
             </li>
         </ul>
-        <p>Use {#syntax#}&x{#endsyntax#} to obtain a single-item pointer:</p>
+        <p>
+          単項目ポインタを得るには、{#syntax#}&x{#endsyntax#}を使用します:
+        </p>
       {#code_begin|test|test_single_item_pointer#}
 const expect = @import("std").testing.expect;
 
@@ -2626,7 +2680,9 @@ test "pointer array access" {
 }
       {#code_end#}
       <p>
-       Zig supports pointer arithmetic. It's better to assign the pointer to {#syntax#}[*]T{#endsyntax#} and increment that variable. For example, directly incrementing the pointer from a slice will corrupt it.
+        Zigはポインタ演算をサポートしています。
+        ポインタを{#syntax#}[*]T{#endsyntax#}に代入して、その変数をインクリメントするのがよいでしょう。
+        例えば、スライスから直接ポインタをインクリメントすると、ポインタが破損します。
       </p>
       {#code_begin|test|test_pointer_arithmetic#}
 const expect = @import("std").testing.expect;
@@ -2656,13 +2712,11 @@ test "pointer arithmetic with slices" {
 }
       {#code_end#}
       <p>
-        In Zig, we generally prefer {#link|Slices#} rather than {#link|Sentinel-Terminated Pointers#}.
-        You can turn an array or pointer into a slice using slice syntax.
+        Zigでは、一般に、{#link|番兵終端ポインタ|Sentinel-Terminated Pointers#}よりも{#link|スライス|Slices#}の方が好まれます。
+        スライス構文を使って、配列やポインタをスライスにすることができます。
       </p>
       <p>
-        Slices have bounds checking and are therefore protected
-        against this kind of undefined behavior. This is one reason
-        we prefer slices to pointers.
+        スライスには境界チェックがあるため、このような未定義の動作から保護されます。これが、私たちがポインタよりもスライスを好む理由の1つです。
       </p>
       {#code_begin|test|test_slice_bounds#}
 const expect = @import("std").testing.expect;
@@ -2678,8 +2732,9 @@ test "pointer slicing" {
     try expect(array[3] == 5);
 }
       {#code_end#}
-      <p>Pointers work at compile-time too, as long as the code does not depend on
-      an undefined memory layout:</p>
+      <p>
+        ポインターは、コードが未定義のメモリレイアウトに依存しない限り、コンパイル時にも機能します:
+      </p>
       {#code_begin|test|test_comptime_pointers#}
 const expect = @import("std").testing.expect;
 
@@ -2693,8 +2748,9 @@ test "comptime pointers" {
     }
 }
       {#code_end#}
-      <p>To convert an integer address into a pointer, use {#syntax#}@intToPtr{#endsyntax#}.
-      To convert a pointer to an integer, use {#syntax#}@ptrToInt{#endsyntax#}:</p>
+      <p>
+        整数のアドレスをポインタに変換するには、{#syntax#}@intToPtr{#endsyntax#} を使用します。ポインターを整数に変換するには、{#syntax#}@ptrToInt{#endsyntax#} を使用します:
+      </p>
       {#code_begin|test|test_integer_pointer_conversion#}
 const expect = @import("std").testing.expect;
 
@@ -2705,8 +2761,9 @@ test "@ptrToInt and @intToPtr" {
     try expect(addr == 0xdeadbee0);
 }
       {#code_end#}
-      <p>Zig is able to preserve memory addresses in comptime code, as long as
-      the pointer is never dereferenced:</p>
+      <p>
+        Zig は、ポインターが参照外しされない限り、comptime コードでメモリアドレスを保持できます:
+      </p>
       {#code_begin|test|test_comptime_pointer_conversion#}
 const expect = @import("std").testing.expect;
 
@@ -2723,10 +2780,11 @@ test "comptime @intToPtr" {
       {#code_end#}
       {#see_also|Optional Pointers|@intToPtr|@ptrToInt|C Pointers#}
       {#header_open|volatile#}
-      <p>Loads and stores are assumed to not have side effects. If a given load or store
-      should have side effects, such as Memory Mapped Input/Output (MMIO), use {#syntax#}volatile{#endsyntax#}.
-      In the following code, loads and stores with {#syntax#}mmio_ptr{#endsyntax#} are guaranteed to all happen
-      and in the same order as in source code:</p>
+      <p>
+        ロードとストアは、副作用がないことが前提です。
+        MMIO (Memory Mapped Input/Output) など、ロードやストアに副作用がある場合は、{#syntax#}volatile{#endsyntax#} を使用します。
+        以下のコードでは、{#syntax#}mmio_ptr{#endsyntax#}を使ったロードとストアがすべて発生し、ソースコードと同じ順序で実行されることが保証されています:
+      </p>
       {#code_begin|test|test_volatile#}
 const expect = @import("std").testing.expect;
 
@@ -2736,15 +2794,14 @@ test "volatile" {
 }
       {#code_end#}
       <p>
-      Note that {#syntax#}volatile{#endsyntax#} is unrelated to concurrency and {#link|Atomics#}.
-      If you see code that is using {#syntax#}volatile{#endsyntax#} for something other than Memory Mapped
-      Input/Output, it is probably a bug.
+        {#syntax#}volatile{#endsyntax#}は並行処理や{#link|Atomics#}とは無関係であることに注意してください。
+        もし、Memory Mapped Input/Output 以外に {#syntax#}volatile{#endsyntax#}を使っているコードを見かけたら、それはおそらくバグでしょう。
       </p>
       {#header_close#}
       <p>
-      To convert one pointer type to another, use {#link|@ptrCast#}. This is an unsafe
-      operation that Zig cannot protect you against. Use {#syntax#}@ptrCast{#endsyntax#} only when other
-      conversions are not possible.
+        あるポインタの型を別の型に変換するには、{#link|@ptrCast#} を使用します。
+        これは、Zig が保護できない危険な操作です。
+        他の変換が不可能な場合にのみ {#syntax#}@ptrCast{#endsyntax#} を使用してください。
       </p>
       {#code_begin|test|test_pointer_casting#}
 const std = @import("std");
@@ -2771,18 +2828,15 @@ test "pointer child type" {
       {#code_end#}
       {#header_open|Alignment#}
       <p>
-      Each type has an <strong>alignment</strong> - a number of bytes such that,
-      when a value of the type is loaded from or stored to memory,
-      the memory address must be evenly divisible by this number. You can use
-      {#link|@alignOf#} to find out this value for any type.
+        それぞれの型には<strong>アライメント</strong>があり、その型の値がメモリからロードされたり、メモリにストアされたりするとき、メモリアドレスがこの数で均等に割り切れるようなバイト数になっていなければなりません。
+        この値は {#link|@alignOf#} を使って知ることができます。
       </p>
       <p>
-      Alignment depends on the CPU architecture, but is always a power of two, and
-      less than {#syntax#}1 << 29{#endsyntax#}.
+        アラインメントはCPUアーキテクチャに依存しますが、常に2のべき乗であり、{#syntax#}1 << 29{#endsyntax#}より小さい値です。
       </p>
       <p>
-      In Zig, a pointer type has an alignment value. If the value is equal to the
-      alignment of the underlying type, it can be omitted from the type:
+        Zigでは、ポインタ型はアライメント値を持ちます。
+        この値が元の型のアライメントと等しい場合、型から省略することができます:
       </p>
       {#code_begin|test|test_variable_alignment#}
 const std = @import("std");
@@ -2799,13 +2853,11 @@ test "variable alignment" {
     }
 }
       {#code_end#}
-      <p>In the same way that a {#syntax#}*i32{#endsyntax#} can be {#link|coerced|Type Coercion#} to a
-          {#syntax#}*const i32{#endsyntax#}, a pointer with a larger alignment can be implicitly
-      cast to a pointer with a smaller alignment, but not vice versa.
+      <p>
+        {#syntax#}*i32{#endsyntax#}を{#syntax#}*const i32{#endsyntax#}に{#link|強制|Type Coercion#}できるのと同じように、アライメントの大きなポインタを小さなアライメントのポインタに暗黙的にキャストすることはできますが、その逆はできません。
       </p>
       <p>
-      You can specify alignment on variables and functions. If you do this, then
-      pointers to them get the specified alignment:
+        変数や関数にアライメントを指定することができます。この場合、それらへのポインタは指定されたアライメントを取得します:
       </p>
       {#code_begin|test|test_variable_func_alignment#}
 const expect = @import("std").testing.expect;
@@ -2836,10 +2888,8 @@ test "function alignment" {
 }
       {#code_end#}
       <p>
-      If you have a pointer or a slice that has a small alignment, but you know that it actually
-      has a bigger alignment, use {#link|@alignCast#} to change the
-      pointer into a more aligned pointer. This is a no-op at runtime, but inserts a
-      {#link|safety check|Incorrect Pointer Alignment#}:
+        ポインタやスライスのアライメントが小さいが、実際にはより大きなアライメントを持っていることが分かっている場合、{#link|@alignCast#} を使用してポインタをよりアライメントが大きいポインタに変更します。
+        これは、実行時には何もしませんが、{#link|安全チェック|Incorrect Pointer Alignment#}を挿入します。
       </p>
       {#code_begin|test_safety|test_incorrect_pointer_alignment|incorrect alignment#}
 const std = @import("std");
@@ -2859,12 +2909,11 @@ fn foo(bytes: []u8) u32 {
 
       {#header_open|allowzero#}
       <p>
-      This pointer attribute allows a pointer to have address zero. This is only ever needed on the
-      freestanding OS target, where the address zero is mappable. If you want to represent null pointers, use
-      {#link|Optional Pointers#} instead. {#link|Optional Pointers#} with {#syntax#}allowzero{#endsyntax#}
-      are not the same size as pointers. In this code example, if the pointer
-      did not have the {#syntax#}allowzero{#endsyntax#} attribute, this would be a
-      {#link|Pointer Cast Invalid Null#} panic:
+        このポインタ属性は、ポインタのアドレスがゼロであることを許可します。
+        これは、アドレスゼロがマッピング可能な独立型OSターゲットでのみ必要とされます。
+        NULLポインタを表現したい場合は、代わりに{#link|Optional Pointers#}を使用します。
+        {#syntax#}allowzero{#endsyntax#}を持つ{#link|Optional Pointers#}は、ポインタと同じサイズではありません。
+        このコード例では、ポインタに {#syntax#}allowzero{#endsyntax#} 属性がなかった場合、{#link|Pointer Cast Invalid Null#} パニックになります:
       </p>
       {#code_begin|test|test_allowzero#}
 const std = @import("std");
@@ -2880,9 +2929,8 @@ test "allowzero" {
 
       {#header_open|Sentinel-Terminated Pointers#}
       <p>
-      The syntax {#syntax#}[*:x]T{#endsyntax#} describes a pointer that
-      has a length determined by a sentinel value. This provides protection
-      against buffer overflow and overreads.
+        {#syntax#}[*:x]T{#endsyntax#} 構文は、番兵値によって決定される長さを持つポインタを記述すします。
+        これは、バッファオーバーフローやオーバーリードに対する保護となります。
       </p>
       {#code_begin|exe_build_err|sentinel-terminated_pointer#}
       {#link_libc#}
@@ -2938,7 +2986,7 @@ test "basic slices" {
     // asserts that the slice has len >= 1.
 }
       {#code_end#}
-      <p>This is one reason we prefer slices to pointers.</p>
+      <p>これが、ポインタよりもスライスを好む理由の1つです。</p>
       {#code_begin|test|test_slices#}
 const std = @import("std");
 const expect = std.testing.expect;
@@ -2995,10 +3043,9 @@ test "slice pointer" {
 
       {#header_open|Sentinel-Terminated Slices#}
       <p>
-      The syntax {#syntax#}[:x]T{#endsyntax#} is a slice which has a runtime-known length
-      and also guarantees a sentinel value at the element indexed by the length. The type does not
-      guarantee that there are no sentinel elements before that. Sentinel-terminated slices allow element
-      access to the {#syntax#}len{#endsyntax#} index.
+        {#syntax#}[:x]T{#endsyntax#}構文は、実行時に既知の長さを持つスライスであり、長さでインデックスされた要素に番兵値を保証するものです。
+        この型は、それ以前に番兵要素がないことを保証するものではありません。
+        番兵終端スライスは {#syntax#}len{#endsyntax#} インデックスへの要素アクセスを許可します。
       </p>
       {#code_begin|test|test_null_terminated_slice#}
 const std = @import("std");
@@ -3012,9 +3059,8 @@ test "null terminated slice" {
 }
       {#code_end#}
       <p>
-      Sentinel-terminated slices can also be created using a variation of the slice syntax
-      {#syntax#}data[start..end :x]{#endsyntax#}, where {#syntax#}data{#endsyntax#} is a many-item pointer,
-      array or slice and {#syntax#}x{#endsyntax#} is the sentinel value.
+        番兵終端スライスは、スライス構文{#syntax#}data[start..end :x]{#endsyntax#}を利用して作成することもできます。
+        ここで、{#syntax#}data{#endsyntax#}は多項目のポインタ、配列、またはスライスで、{#syntax#}x{#endsyntax#}は番兵値です。
       </p>
       {#code_begin|test|test_null_terminated_slicing#}
 const std = @import("std");
@@ -3030,8 +3076,9 @@ test "null terminated slicing" {
 }
       {#code_end#}
       <p>
-      Sentinel-terminated slicing asserts that the element in the sentinel position of the backing data is
-      actually the sentinel value. If this is not the case, safety-protected {#link|Undefined Behavior#} results.
+        番兵終端スライスは、backing dataの番兵位置にある要素が実際に番兵値であることを保証します。
+        そうでない場合、安全保護された{#link|未定義動作|Undefined Behavior#}が発生します:
+        TODO: backing data 訳
       </p>
       {#code_begin|test_safety|test_sentinel_mismatch|sentinel mismatch#}
 const std = @import("std");
